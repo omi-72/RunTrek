@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_nav_graph"
-    app:startDestination="@id/settingsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/setupFragment2">
 
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.runningtrackerapp.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
-    <fragment
-        android:id="@+id/setUpFragment"
-        android:name="com.example.runningtrackerapp.SetUpFragment"
-        android:label="fragment_set_up"
-        tools:layout="@layout/fragment_set_up" >
+        android:id="@+id/runFragment2"
+        android:name="com.example.runningtrackerapp.fragments.RunFragment"
+        android:label="RunFragment" >
         <action
-            android:id="@+id/action_setUpFragment_to_runFragment"
-            app:destination="@id/runFragment" />
+            android:id="@+id/action_runFragment2_to_trackingFragment"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.runningtrackerapp.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.runningtrackerapp.fragments.StatisticsFragment"
+        android:label="StatisticsFragment" />
+    <fragment
+        android:id="@+id/setupFragment2"
+        android:name="com.example.runningtrackerapp.fragments.SetupFragment"
+        android:label="SetupFragment" >
+        <action
+            android:id="@+id/action_setupFragment2_to_runFragment2"
+            app:destination="@id/runFragment2" />
     </fragment>
     <fragment
         android:id="@+id/trackingFragment"
-        android:name="com.example.runningtrackerapp.TrackingFragment"
-        android:label="fragment_tracking"
-        tools:layout="@layout/fragment_tracking" >
+        android:name="com.example.runningtrackerapp.fragments.TrackingFragment"
+        android:label="TrackingFragment" >
         <action
-            android:id="@+id/action_trackingFragment_to_runFragment"
-            app:destination="@id/runFragment" />
+            android:id="@+id/action_trackingFragment_to_runFragment2"
+            app:destination="@id/runFragment2" />
     </fragment>
-    <fragment
-        android:id="@+id/runFragment"
-        android:name="com.example.runningtrackerapp.RunFragment"
-        android:label="fragment_run"
-        tools:layout="@layout/fragment_run" >
-        <action
-            android:id="@+id/action_runFragment_to_trackingFragment"
-            app:destination="@id/trackingFragment" />
-    </fragment>
+
     <action
         android:id="@+id/action_global_trackingFragment"
         app:destination="@id/trackingFragment"
