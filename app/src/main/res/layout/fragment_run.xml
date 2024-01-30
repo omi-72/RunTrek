@@ -44,9 +44,208 @@
         app:fabSize="normal"
         app:rippleColor="@android:color/white"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@android:color/black" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fargmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutRun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/layoutStatistics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewRun"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_run"
+            app:tint="@color/white"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewRunYellow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_run"
+            app:tint="@color/colorAccent"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Run"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="@id/imageViewRun"
+            app:layout_constraintEnd_toEndOf="@id/imageViewRun"
+            app:layout_constraintTop_toBottomOf="@id/imageViewRun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textViewRunTellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Run"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="@id/imageViewRunYellow"
+            app:layout_constraintEnd_toEndOf="@id/imageViewRunYellow"
+            app:layout_constraintTop_toBottomOf="@id/imageViewRunYellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutStatistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/layoutSettings"
+        app:layout_constraintStart_toEndOf="@id/layoutRun"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewStatistic"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_graph"
+            app:tint="@color/white"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageViewStatisticYellow"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_graph"
+            app:tint="@color/colorAccent"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewStatistic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statistics"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="@id/imageViewStatistic"
+            app:layout_constraintEnd_toEndOf="@id/imageViewStatistic"
+            app:layout_constraintTop_toBottomOf="@id/imageViewStatistic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textViewStatisticYellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statistics"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="@id/imageViewStatisticYellow"
+            app:layout_constraintEnd_toEndOf="@id/imageViewStatisticYellow"
+            app:layout_constraintTop_toBottomOf="@id/imageViewStatisticYellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/layoutStatistics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewSetting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_settings"
+            app:tint="@color/white"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageViewSettingYellow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_settings"
+            app:tint="@color/colorAccent"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/imageViewSetting"
+            app:layout_constraintEnd_toEndOf="@id/imageViewSetting"
+            app:layout_constraintTop_toBottomOf="@id/imageViewSetting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textViewSettingsYellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/imageViewSettingYellow"
+            app:layout_constraintEnd_toEndOf="@id/imageViewSettingYellow"
+            app:layout_constraintTop_toBottomOf="@id/imageViewSettingYellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
