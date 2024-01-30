@@ -144,6 +144,7 @@ class RunFragment : Fragment(R.layout.fragment_run) , EasyPermissions.Permission
    }
 
 
+
    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
       if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)){
          AppSettingsDialog.Builder(this).build().show()
