@@ -14,6 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.runningtrackerapp.R
 import com.example.runningtrackerapp.databinding.ActivityMainBinding
 import com.example.runningtrackerapp.db.RunDao
+import com.example.runningtrackerapp.other.Constants.ACTION_SHOW_TRACKING_FRAGMENT
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -29,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        navigateToTrackingFragmentIfNeeded(intent)
 
 
      //   prepareBottomNavigation()
@@ -97,40 +100,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    private fun prepareBottomNavigation() {
-//        val navView: BottomNavigationView = binding.bottomNavigationView
-//
-//        navController =
-//            findNavController(R.id.navHostFragment)
-//        navView.setupWithNavController(navController)
-//
-//        navView.setOnItemSelectedListener { menuItem ->
-//            when (menuItem.itemId) {
-//                R.id.navHostFragment -> {
-//                    binding.bottomNavigationView.visibility = View.VISIBLE
-//                    if (navController.currentDestination?.id != R.id.settingsFragment) {
-//                        navController.popBackStack()
-//                        navController.navigate(R.id.settingsFragment)
-//
-//                    }
-//                    true
-//                }
-//
-//                R.id.navHostFragment -> {
-//                    binding.bottomNavigationView.visibility = View.VISIBLE
-//                    if (navController.currentDestination?.id != R.id.runFragment2) {
-//                        navController.popBackStack()
-//                        navController.navigate(R.id.runFragment2)
-//                    }
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
-//    }
-//
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()||super.onSupportNavigateUp()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        navigateToTrackingFragmentIfNeeded(intent)
+    }
+
+    private fun navigateToTrackingFragmentIfNeeded(intent: Intent?){
+        if(intent?.action == ACTION_SHOW_TRACKING_FRAGMENT){
+            binding.navHostFragment.findNavController().navigate(R.id.action_global_trackingFragment)
+        }
     }
 
 
